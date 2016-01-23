@@ -1,0 +1,26 @@
+
+.mobile div{
+ width:50px;
+ height: 50px;
+ position: fixed;
+ background: url("https://cdn4.iconfinder.com/data/icons/defaulticon/icons/png/48x48/arrow-right.png");
+}
+#u{
+  bottom: 110px;
+  left: 75px;
+  transform:rotate(-90deg);
+}
+#d{
+  bottom: 50px;
+  left: 75px;
+  transform:rotate(90deg);
+}
+#l{
+  bottom: 75px;
+  left: 20px;
+  transform:rotate(180deg);
+}
+#r{
+  bottom: 75px;
+  left: 130px;
+}

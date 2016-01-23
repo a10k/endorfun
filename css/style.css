@@ -1,6 +1,10 @@
 html{
   font-family: 'Exo 2', sans-serif;
 }
+*{
+  overflow-y: hidden;
+  overflow-x: hidden; 
+}
 .container {
   position: fixed;
   left: 0;
