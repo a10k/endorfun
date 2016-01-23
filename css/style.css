@@ -6,7 +6,7 @@ html{
   left: 0;
   top: 0;
   width: 100%;
-  z-index: 999;
+  z-index: 99;
   pointer-events: none;
 }
 .footer{
@@ -14,7 +14,7 @@ html{
   right: 0;
   bottom: 0;
   width: 100%;
-  z-index: 999;
+  z-index: 99;
   font-size: 12px;
 }
 .box{
@@ -54,4 +54,120 @@ h4 {
 .desc{
   color: #663399;
   font-size: 10px;
+}
+
+.mobile{
+  position: fixed;
+  z-index: 999;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  height: 30%;
+  background-color: rgba(3,3,3,0.1);
+  display: none;
+}
+/*Mobile support*/
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+  .mobile{display: block;}
+}
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+  .mobile{display: block;}
+}
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2) { 
+
+}
+@media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+
+  .mobile{display: block;}
+}
+@media screen 
+  and (device-width: 320px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 2) {
+
+  .mobile{display: block;}
+}
+@media screen 
+  and (device-width: 320px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 3) {
+
+  .mobile{display: block;}
+}
+@media screen 
+  and (device-width: 360px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 3) {
+
+  .mobile{display: block;}
+}
+@media screen 
+  and (device-width: 360px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 3) {
+
+  .mobile{display: block;}
+}
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+  .mobile{display: block;}
+}
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+  .mobile{display: block;}
+}
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+  .mobile{display: block;}
+}
+@media 
+  (min-device-width: 800px) 
+  and (max-device-width: 1280px) {
+
+  .mobile{display: block;}
+}
+@media screen 
+  and (device-width: 601px) 
+  and (device-height: 906px) 
+  and (-webkit-min-device-pixel-ratio: 1.331) 
+  and (-webkit-max-device-pixel-ratio: 1.332) {
+
+  .mobile{display: block;}
+}
+@media only screen 
+  and (min-device-width: 800px) 
+  and (max-device-width: 1280px) 
+  and (-webkit-min-device-pixel-ratio: 1.5) {
+
+  .mobile{display: block;}
+}
+@media only screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 1.5) {
+
+  .mobile{display: block;}
 }
