@@ -7,7 +7,8 @@ var yDown = null;
 
 function handleTouchStart(evt) {                                         
     xDown = evt.touches[0].clientX;                                      
-    yDown = evt.touches[0].clientY;                                      
+    yDown = evt.touches[0].clientY;
+    evt.preventDefault();                                 
 };                                                
 
 function handleTouchMove(evt) {
@@ -40,5 +41,7 @@ function handleTouchMove(evt) {
     }
     /* reset values */
     xDown = null;
-    yDown = null;                                             
+    yDown = null;  
+
+    evt.preventDefault();                                           
 };
