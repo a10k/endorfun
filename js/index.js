@@ -80,16 +80,6 @@ $(document).ready(function(){
     shadowLight.position.set(200, 200, 200);
     backLight = new THREE.DirectionalLight(0xffffff, .4);
     backLight.position.set(-500, 500, -500);
-    backLight.castShadow = true;
-    backLight.shadowDarkness = 0.1;
-    backLight.shadowCameraNear = 64;
-    backLight.shadowCameraFar = 1024;
-    backLight.shadowCameraFov = 256;
-    d = 16;
-    backLight.shadowCameraLeft = -d
-    backLight.shadowCameraRight = d
-    backLight.shadowCameraTop = d
-    backLight.shadowCameraBottom = -d
     
     scene.add(light);
     scene.add(backLight);
