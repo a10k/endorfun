@@ -41,6 +41,9 @@ a{
   left: 0;
   top: 0; 
 }
+h1{
+  font-size: 42px;
+}
 p, h1,h3 {
   position: relative;
   font-weight: 300;
