@@ -179,6 +179,7 @@ document.onkeydown = function(e) {
        // right arrow
        controlCube.moveRight();
     }
+    e.preventDefault();
 }
 
 // Cube game model
