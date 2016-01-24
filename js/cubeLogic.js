@@ -161,7 +161,7 @@ function rotateAroundWorldAxis(object, axis, radians) {
 }
 
 //Arrow key cotrol!
-document.onkeydown = function(e) {
+var keyControl = function(e) {
     e = e || window.event;
     if (e.keyCode == '38') {
         // up arrow
@@ -181,26 +181,9 @@ document.onkeydown = function(e) {
     }
     e.preventDefault();
 }
-window.onkeydown = function(e) {
-    e = e || window.event;
-    if (e.keyCode == '38') {
-        // up arrow
-        controlCube.moveUp();
-    }
-    else if (e.keyCode == '40') {
-        // down arrow
-        controlCube.moveDown();
-    }
-    else if (e.keyCode == '37') {
-       // left arrow
-       controlCube.moveLeft();
-    }
-    else if (e.keyCode == '39') {
-       // right arrow
-       controlCube.moveRight();
-    }
-    e.preventDefault();
-}
+//document.onkeydown = keyControl;
+//window.onkeydown = keyControl;
+$( "*" ).keydown(keyControl);
 
 // Cube game model
 var gameCube = {
