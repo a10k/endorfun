@@ -29,6 +29,8 @@
 	  if (response.status == 'connected') {
 	    FB.api('/me?fields=first_name', function(data) {
 	      var welcomeBlock = document.getElementById('fb-welcome');
+	      var controlHint = document.getElementById('fbcontrol');
+	      controlHint.innerHTML = "(Click here and try arrow keys, if keyboard control is not focused on page!)";
 	      welcomeBlock.innerHTML = 'Hello, ' + data.first_name + '!';
 	    });
 	  }
@@ -65,10 +67,11 @@
   </h3>
 </div>
 <div class="footer">
+  <h4 id="fbcontrol"></h4>
   <h4><a href="http://facebook.com/aloknookraj" target="blank"><span>Made by Alok Pepakayala</span></a><br/><span class="desc">Roll the cube into the flashing square with the top face matching its color.</span></h4>
 </div>
 <div id="endorfun"></div>
-<!--<div class="box"></div>-->
+<div class="box"></div>
 <div class="mobile"></div>
 <div class="virtual">
   <div id="u" onclick="controlCube.moveUp();"></div>

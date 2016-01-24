@@ -181,9 +181,7 @@ var keyControl = function(e) {
     }
     e.preventDefault();
 }
-//document.onkeydown = keyControl;
-//window.onkeydown = keyControl;
-$( "*" ).keydown(keyControl);
+document.onkeydown = keyControl;
 
 // Cube game model
 var gameCube = {
@@ -334,7 +332,7 @@ var puzzle = {
   'move': function(){
     this.moves++;
     $('.chances').html(this.moves);
-    //$('.box').css('border-color', cssColor[gameCube.up]);
+    $('.box').css('border-color', cssColor[gameCube.up]);
     $('.container').css('color', cssColor[gameCube.up]);
   },
   'score': function(){
