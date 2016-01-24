@@ -20,10 +20,9 @@ $(document).ready(function(){
     renderer.setSize(WIDTH, HEIGHT);
     renderer.setClearColor(0xffffff, 1);
     renderer.shadowMap.enabled = true;
-    renderer.shadowMapSoft = true;
     threejs.appendChild(renderer.domElement);
 
-    camera = new THREE.PerspectiveCamera(25, WIDTH / HEIGHT, 1 , 10000);
+    camera = new THREE.PerspectiveCamera(25, WIDTH / HEIGHT, 1 , 2000);
     camera.position.set(15, 19, 30);
     camera.lookAt(scene.position);
     scene.add(camera);
@@ -39,9 +38,8 @@ $(document).ready(function(){
     }
     var material = new THREE.MeshPhongMaterial({
       color: color,
-      transparent: false,
-      vertexColors: THREE.FaceColors,
-      shading: THREE.FlatShading, 
+      transparent: true,
+      vertexColors: THREE.FaceColors
     });
     mesh = new THREE.Mesh(geometry, material);
     mesh.position.set(0, 0, 0);
@@ -72,20 +70,30 @@ $(document).ready(function(){
     });
     puzzleMesh = new THREE.Mesh(puzzleGeometry, puzzleMaterial);
     puzzleMesh.position.set(4, -0.45, 2);
+    puzzleMesh.doubleSided = true;
+    puzzleMesh.castShadow = true;
     scene.add(puzzleMesh);
 
 
-    light = new THREE.HemisphereLight(0xffffff, 0xffffff, .7)
+    light = new THREE.HemisphereLight(0xffffff, 0xffffff, .7);
     shadowLight = new THREE.DirectionalLight(0xffffff, .5);
     shadowLight.position.set(200, 200, 200);
     backLight = new THREE.DirectionalLight(0xffffff, .4);
     backLight.position.set(-500, 500, -500);
+    backLight.castShadow = true;
+    backLight.shadowDarkness = 0.1;
+    backLight.shadowCameraNear = 64;
+    backLight.shadowCameraFar = 1024;
+    backLight.shadowCameraFov = 256;
+    d = 16;
+    backLight.shadowCameraLeft = -d
+    backLight.shadowCameraRight = d
+    backLight.shadowCameraTop = d
+    backLight.shadowCameraBottom = -d
     
     scene.add(light);
     scene.add(backLight);
     scene.add(shadowLight);
-
-    
 
     controls = new THREE.OrbitControls(camera, renderer.domElement);
     window.addEventListener( 'resize', onWindowResize, false );
