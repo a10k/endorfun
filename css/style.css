@@ -91,6 +91,7 @@ h4 {
   align-items:center;
   color:white;
   font-weight: bolder;
+  flex-direction: column;
   font-size: 48px;
   border:8px dashed white;
   background: linear-gradient(40deg, rgba(73,155,234,0.1) 0%, rgba(227,32,204,1) 100%);
