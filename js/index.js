@@ -15,10 +15,9 @@ $(document).ready(function(){
     threejs = document.getElementById('endorfun');
     scene = new THREE.Scene();
 
-    renderer = new THREE.WebGLRenderer({antialias:true});
+    renderer = new THREE.WebGLRenderer({antialias:true,alpha:true});
     renderer.setPixelRatio( window.devicePixelRatio );
     renderer.setSize(WIDTH, HEIGHT);
-    renderer.setClearColor(0xffffff, 1);
     renderer.shadowMap.enabled = true;
     threejs.appendChild(renderer.domElement);
 
