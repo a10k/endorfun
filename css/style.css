@@ -77,6 +77,24 @@ h4 {
   background-color: rgba(3,3,3,0.1);
   display: none;
 }
+
+.nofocus{
+  display: flex;
+  position: fixed;
+  width: 70%;
+  height: 70%;
+  top:15%;
+  left:15%;
+  background-color: red;
+  cursor: pointer;
+  justify-content:center;
+  align-items:center;
+  color:white;
+  font-weight: bolder;
+  font-size: 48px;
+  border:8px dashed white;
+  background: linear-gradient(40deg, rgba(73,155,234,0.1) 0%, rgba(227,32,204,1) 100%);
+}
 /*Mobile support*/
 @media only screen 
   and (min-device-width: 320px) 
