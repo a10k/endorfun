@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html >
+<html>
 <meta charset="UTF-8">
 <meta property="og:image" content="http://a10k.github.io/endorfun/endorfun.jpg" />
 <meta property="og:image:width" content="1024" />
@@ -13,6 +13,7 @@
 <link href='https://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="css/normalize.css">
 <link rel="stylesheet" href="css/style.css">
+<script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
 <body>
 <script>
   window.fbAsyncInit = function() {
@@ -29,6 +30,11 @@
 	  if (response.status == 'connected') {
 	    FB.api('/me?fields=first_name', function(data) {
 	      var welcomeBlock = document.getElementById('fb-welcome');
+        var firebaseRef = new Firebase("https://endorfun.firebaseio.com");
+        firebaseRef.push().set({
+          facebook: data,
+          date: Date()
+        });
 	      welcomeBlock.innerHTML = 'Hello, ' + data.first_name + '!';
 	    });
 	  }
