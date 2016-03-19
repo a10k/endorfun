@@ -1,14 +1,10 @@
 @font-face {
-    font-family: "Telefon Black";
-    src: url(//codepen.io/assets/telefon/black/3f32b1c9-8e26-465e-ae02-ff82a378b670-3.woff) format("woff"), url(//codepen.io/assets/telefon/black/3f32b1c9-8e26-465e-ae02-ff82a378b670-3.woff2) format("woff2")
-}
-
-@font-face {
-    font-family: "Telefon";
-    src: url(//codepen.io/assets/telefon/bold/af889c53-1ee3-4868-8fdc-2b310d587b50-3.woff) format("woff"), url(//codepen.io/assets/telefon/bold/af889c53-1ee3-4868-8fdc-2b310d587b50-3.woff2) format("woff2")
+    font-family: "W";
+    src: url(w.woff) format("woff"),
+     url(w.woff2) format("woff2")
 }
 html{
-  font-family: 'Telefon', sans-serif;
+  font-family: 'W', sans-serif;
   color:white;
 }
 body{
@@ -62,7 +58,6 @@ a{
   top: 0; 
 }
 h1{
-  font-family: 'Telefon Black', sans-serif;
   font-size: 42px;
   text-shadow: 1px 1px 5px black;
 }
