@@ -338,9 +338,34 @@ var puzzle = {
   'score': function(){
     this.scores++;
     $('.win').html(this.scores);
+    //calculate time
     var currentTime = new Date();
     var diffTime = ( currentTime.getTime() - beginTime.getTime())/1000;
     beginTime = currentTime;
+
+    //calculate score based on time or moves
+    var computedScore = null;
+    if (diffTime <= 10) {
+      computedScore = 10;
+    } else if(diffTime <= 20){
+      computedScore = 8;
+    } else if(diffTime <= 30){
+      computedScore = 5;
+    } else if(diffTime <= 45){
+      computedScore = 3;
+    } else if(diffTime <= 60){
+      computedScore = 2;
+    } else{
+      computedScore = 1;
+    }
+
+    //fb score
+    if (isLogedIn) {
+      player.child('score').transaction(function (current_value) {
+        return (current_value || 0) + (computedScore || 1);
+      });
+    }
+    //record the session
     if(thisGameStat){
       thisGameStat.push().set({
                   time: diffTime,

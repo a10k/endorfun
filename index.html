@@ -16,8 +16,10 @@
 <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
 <body>
 <script>
-var firebaseRef = new Firebase("https://endorfun.firebaseio.com");
+var firebaseRef = new Firebase("https://endorfun.firebaseio.com/sessions");
 var thisGameStat = firebaseRef.push();
+var isLogedIn = false;
+var players,player;
 
   window.fbAsyncInit = function() {
     FB.init({
@@ -34,6 +36,14 @@ var thisGameStat = firebaseRef.push();
 	    FB.api('/me?fields=first_name', function(data) {
 	      var welcomeBlock = document.getElementById('fb-welcome');
 	      welcomeBlock.innerHTML = 'Hello, ' + data.first_name + '!';
+        isLogedIn = true;
+        players = new Firebase("https://endorfun.firebaseio.com/players");
+        player = players.child(data.id);
+        player.update({
+            'name': data.first_name
+        });
+
+        //Session records
         thisGameStat.push().set({
                 facebook: data,
                 date: Date()
