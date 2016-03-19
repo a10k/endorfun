@@ -42,7 +42,11 @@ var players,player;
         player.update({
             'name': data.first_name
         });
-
+        //listen for score changes
+        player.child('score').on('value',function(snapshot){
+          var score = snapshot.val();
+          $('.globalScoreValue').html(score);
+        });
         //Session records
         thisGameStat.push().set({
                 facebook: data,
@@ -77,7 +81,8 @@ var players,player;
 <div class="container">
   <h1>Endorfun</h1>
   <h3>
-  	<span id="fb-welcome"></span><br/>
+    <div class="globalScoreBox">Score: <span class="globalScoreValue">0</span></div>
+    <span id="fb-welcome"></span><br/>
     Solved: <span class="win">0</span><br/>
     Moves: <span class="chances">0</span>
   </h3>

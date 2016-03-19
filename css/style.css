@@ -120,6 +120,19 @@ h4 {
   border-radius: 3px;
   margin-bottom: 32px;
 }
+.globalScoreBox{
+  padding-top: 4px;
+  padding-left: 4px;
+  padding-bottom: 4px;
+  padding-right: 2px;
+  color:#222;
+  background: #FFE706;
+  text-shadow: none;
+  display: inline-block;
+  border-radius: 4px; 
+  margin-bottom: 10px;
+  margin-right: -6px;
+}
 /*Mobile support*/
 @media only screen 
   and (min-device-width: 320px) 
