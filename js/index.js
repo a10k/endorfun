@@ -1,3 +1,4 @@
+var beginTime = new Date();
 var scene, camera, renderer, threejs;
 var gui = null;
 var WIDTH = window.innerWidth,
@@ -135,3 +136,18 @@ puzzleTween.onUpdate(puzzleTweenUpdate);
 puzzleTween.repeat(Infinity);
 puzzleTween.yoyo(true);
 puzzleTween.start();
+
+
+//Background
+var makeBackground = function(){
+  var rn = Math.floor((Math.random() * 150) + 60);
+  var rs = Math.floor((Math.random() * 11) + 4);
+    var t = new Trianglify({
+   x_gradient: Trianglify.colorbrewer.Spectral[rs],
+      noiseIntensity: 0,
+      cellsize: rn
+  });
+  var pattern = t.generate(window.innerWidth, window.innerWidth+200);
+  document.body.setAttribute('style', 'background-image: '+pattern.dataUrl);
+};
+makeBackground();

@@ -14,8 +14,13 @@
 <link rel="stylesheet" href="css/normalize.css">
 <link rel="stylesheet" href="css/style.css">
 <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/trianglify/0.1.5/trianglify.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
 <body>
 <script>
+var firebaseRef = new Firebase("https://endorfun.firebaseio.com");
+var thisGameStat = firebaseRef.push();
+
   window.fbAsyncInit = function() {
     FB.init({
       appId      : '492182607628074',
@@ -30,12 +35,11 @@
 	  if (response.status == 'connected') {
 	    FB.api('/me?fields=first_name', function(data) {
 	      var welcomeBlock = document.getElementById('fb-welcome');
-        var firebaseRef = new Firebase("https://endorfun.firebaseio.com");
-        firebaseRef.push().set({
-          facebook: data,
-          date: Date()
-        });
 	      welcomeBlock.innerHTML = 'Hello, ' + data.first_name + '!';
+        thisGameStat.push().set({
+                facebook: data,
+                date: Date()
+              });
 	    });
 	  }
 	}
@@ -70,13 +74,13 @@
     Moves: <span class="chances">0</span>
   </h3>
 </div>
-<div class="footer">
+<div class="footer" style="display: none;">
   <h4><a href="http://facebook.com/aloknookraj" target="blank"><span>Made by Alok Pepakayala</span></a><br/><span class="desc">Roll the cube into the flashing square with the top face matching its color.</span></h4>
 </div>
 <div id="endorfun" tabindex="0"></div>
 <div class="box"></div>
 <div class="mobile"></div>
-<div class="nofocus"> <div style="border:8px dotted white"><img src="endorfun.gif" style="display:block"></div> <div>Click here to play!</div><div style="font-size:12px;font-weight:100;">(Hint: Use arrow keys on desktop!)</div></div>
+<div class="nofocus"> <div class="hintImage"><img src="endorfun.gif" style="display:block"></div> <div>Click here to play!</div><div style="font-size:12px;font-weight:100;">(Hint: Use arrow keys on desktop!)</div></div>
 <div class="virtual">
   <div id="u" onclick="controlCube.moveUp();"></div>
   <div id="d" onclick="controlCube.moveDown();"></div>
@@ -90,7 +94,6 @@
 <script src="js/index.js"></script>
 <script src="js/cubeLogic.js"></script>
 <script src="js/mobile.js"></script>
-
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

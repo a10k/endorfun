@@ -338,6 +338,16 @@ var puzzle = {
   'score': function(){
     this.scores++;
     $('.win').html(this.scores);
+    var currentTime = new Date();
+    var diffTime = ( currentTime.getTime() - beginTime.getTime())/1000;
+    beginTime = currentTime;
+    if(thisGameStat){
+      thisGameStat.push().set({
+                  time: diffTime,
+                  score: this.scores,
+                  moves: this.moves
+                });
+    }
   }
 }
 
