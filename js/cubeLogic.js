@@ -333,7 +333,7 @@ var puzzle = {
     this.moves++;
     $('.chances').html(this.moves);
     $('.box').css('border-color', cssColor[gameCube.up]);
-    $('.container').css('color', cssColor[gameCube.up]);
+    //$('.container').css('color', cssColor[gameCube.up]);
   },
   'score': function(){
     this.scores++;
