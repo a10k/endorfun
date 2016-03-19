@@ -45,7 +45,7 @@ var players,player;
         //listen for score changes
         player.child('score').on('value',function(snapshot){
           var score = snapshot.val();
-          $('.globalScoreValue').html(score);
+          $('.globalScoreValue').html(score || 0);
         });
         //Session records
         thisGameStat.push().set({
