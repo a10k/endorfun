@@ -330,6 +330,8 @@ var puzzle = {
     }
   },
   'move': function(){
+    audio.currentTime = 0.05;
+    audio.play();
     this.moves++;
     $('.chances').html(this.moves);
     $('.box').css('border-color', cssColor[gameCube.up]);

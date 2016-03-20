@@ -139,6 +139,22 @@ h4 {
   overflow-x:visible;
   overflow-y:visible;
 }
+.volumeControl{
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+.volumeControl.on{
+  background:url(../on.svg);
+  background-repeat: no-repeat;
+}
+.volumeControl{
+  background:url(../off.svg);
+  background-repeat: no-repeat;
+}
 
 /*Mobile support*/
 @media only screen 

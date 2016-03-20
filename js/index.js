@@ -1,4 +1,16 @@
 var beginTime = new Date();
+var audio = new Audio('sound.mp3');
+    audio.volume = 0.01;
+var toggleAudio = function(){
+  $('.volumeControl').toggleClass('on');
+  if (audio.volume === 0.01) {
+    audio.volume = 0;
+  } else {
+    audio.volume = 0.01;
+  }
+};
+
+
 var scene, camera, renderer, threejs;
 var gui = null;
 var WIDTH = window.innerWidth,
