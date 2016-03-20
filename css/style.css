@@ -112,13 +112,11 @@ h4 {
   cursor: pointer;
 }
 .hintImage{
-  border-radius: 3px;
-  margin-bottom: 32px;
-  width: 50%;
+  width: 60%;
   height: 70%;
-  transform:translate(20%,0);
-  background:url(../hint.png);
+  background:url(../hint.svg);
   background-size: contain;
+  background-position: center center;
   background-repeat: no-repeat;
 }
 .globalScoreBox{
