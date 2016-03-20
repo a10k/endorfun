@@ -114,6 +114,12 @@ h4 {
 .hintImage{
   border-radius: 3px;
   margin-bottom: 32px;
+  width: 50%;
+  height: 70%;
+  transform:translate(20%,0);
+  background:url(../hint.png);
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 .globalScoreBox{
   padding-top: 4px;
