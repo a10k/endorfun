@@ -330,11 +330,13 @@ var puzzle = {
     }
   },
   'move': function(){
-    audio.currentTime = 0;
-    audio.play();
+    if(audioFlag){
+      audio.currentTime = 0;
+      audio.play();
+    }
     this.moves++;
     $('.chances').html(this.moves);
-    $('.box').css('border-color', cssColor[gameCube.up]);
+    //$('.box').css('border-color', cssColor[gameCube.up]);
     //$('.container').css('color', cssColor[gameCube.up]);
   },
   'score': function(){

@@ -1,12 +1,15 @@
 var beginTime = new Date();
 var audio = new Audio('sound.mp3');
     audio.volume = 0;
+var audioFlag = false;
 var toggleAudio = function(){
   $('.volumeControl').toggleClass('on');
-  if (audio.volume === 0.01) {
+  if (audioFlag) {
     audio.volume = 0;
+    audioFlag = false;
   } else {
     audio.volume = 0.01;
+    audioFlag = true;
   }
 };
 
