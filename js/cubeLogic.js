@@ -330,7 +330,7 @@ var puzzle = {
     }
   },
   'move': function(){
-    audio.currentTime = 0.05;
+    audio.currentTime = 0;
     audio.play();
     this.moves++;
     $('.chances').html(this.moves);
