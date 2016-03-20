@@ -1,0 +1,121 @@
+@font-face {
+    font-family: "W";
+    src: url(w.woff) format("woff"),
+     url(w.woff2) format("woff2")
+}
+html{
+  font-family: 'W', sans-serif;
+  background: #222;
+}
+
+.players {
+  position: relative;
+  margin: 1.876rem 0.938rem;
+  box-shadow: 5px 5px 13px 5px rgba(0, 0, 0, 0.1);
+  border-radius: .6rem;
+  width: 17.813rem;
+  margin-left: calc(50% - 8.5rem);
+}
+.players h1 {
+  margin: 0;
+  background: #383e4a;
+  color: #fff;
+  font-size: 1em;
+  font-weight: normal;
+  line-height: 4.0625rem;
+  padding: 0 0.938rem 0 2.9078rem;
+  border-top-left-radius: .6rem;
+  border-top-right-radius: .6rem;
+  position: relative;
+}
+.players h1 svg {
+  width: 25px;
+  height: 26px;
+  position: absolute;
+  left: 0.7504rem;
+  top: 1.04167rem;
+}
+.players ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  counter-reset: player;
+  font-size: .875rem;
+}
+.players strong {
+  font-weight: normal;
+  margin-left: auto;
+}
+.players em {
+  font-style: normal;
+  margin-right: 3.752rem;
+}
+.players em:before {
+  content: counter(player);
+  display: inline-block;
+  border-radius: 50%;
+  text-align: center;
+  padding: .1rem .34rem;
+  margin: 0 0.938rem 0 0;
+}
+
+.players li:hover {
+  box-shadow: 0 -5px 8px -5px #954448;
+}
+.players li:hover:before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: -0.938rem;
+  top: -0.625rem;
+  width: 0;
+  height: 0;
+  border-left: 0.938rem solid transparent;
+  border-right: 0px solid transparent;
+  border-bottom: 0.625rem solid #954448;
+  z-index: 0;
+}
+.players li:hover:after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: -0.938rem;
+  top: -0.625rem;
+  width: 0;
+  height: 0;
+  border-right: 0.938rem solid transparent;
+  border-left: 0px solid transparent;
+  border-bottom: 0.625rem solid #954448;
+  z-index: 0;
+}
+.players li:hover {
+  border-left: 0.938rem solid transparent;
+  border-right: 0.938rem solid transparent;
+  width: 15.937rem;
+  z-index: 3;
+}
+.players li {
+  left: 50%;
+  transform: translateX(-50%);
+  counter-increment: player;
+  position: relative;
+  z-index: 2;
+  min-height: 3.125rem;
+  display: flex;
+  align-items: center;
+  padding: 0 0.938rem;
+}
+.players li:last-child {
+  border-bottom-left-radius: .6rem;
+  border-bottom-right-radius: .6rem;
+}
+.players li {
+  background: #FFE706;
+  border-color: #c24448;
+  color:#222;
+}
+.players li em:before {
+  color: #111;
+}
+

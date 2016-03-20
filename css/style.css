@@ -159,7 +159,23 @@ h4 {
   background:url(../off.svg);
   background-repeat: no-repeat;
 }
-
+.leaderFrame{
+  position: absolute;
+  bottom: 60px;
+  left: 10px;
+  width: 42px;
+  height: 32px;
+  cursor: pointer;
+  background: none;
+}
+.leaderFrame a{
+  background: none;
+  text-decoration: none;
+}
+.leaderFrame svg{
+  width: 32px;
+  height: 32px;
+}
 /*Mobile support*/
 @media only screen 
   and (min-device-width: 320px) 
