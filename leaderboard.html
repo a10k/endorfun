@@ -66,6 +66,7 @@
 			return b.value.score - a.value.score;
 		});
 		//d3ing
+		d3.select('.playerList').selectAll('li').remove();
 		var listContainer = d3.select('.playerList').selectAll('li').data(jsonData).enter().append('li').html(function(d){
 			return "<em>"+ d.value.name +"</em><strong>"+ d.value.score +"</strong>";
 		})
