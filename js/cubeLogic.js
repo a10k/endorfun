@@ -2,7 +2,7 @@
 var controlCube = {
   'currentPosition':[0,0],
   'boundary':{'left':-7,'right':7,'up':-7,'down':7},
-  'moveTime':180,
+  'moveTime':140,
   'lock':false,
   'jump':function(){
     tweenUp = new TWEEN.Tween({tmp:0}).to({tmp:0.28}, this.moveTime/2);
@@ -335,13 +335,13 @@ var puzzle = {
       audio.play();
     }
     this.moves++;
-    $('.chances').html(this.moves);
+    //$('.chances').html(this.moves);
     //$('.box').css('border-color', cssColor[gameCube.up]);
     //$('.container').css('color', cssColor[gameCube.up]);
   },
   'score': function(){
     this.scores++;
-    $('.win').html(this.scores);
+    //$('.win').html(this.scores);
     //calculate time
     var currentTime = new Date();
     var diffTime = ( currentTime.getTime() - beginTime.getTime())/1000;

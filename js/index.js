@@ -67,8 +67,8 @@ $(document).ready(function(){
 
     var planeGeometry = new THREE.BoxGeometry( 15, 15, 0.1 );
     var planeMaterial = new THREE.MeshLambertMaterial({
-      color: 0xfdd276,
-      side: THREE.DoubleSide
+      color: 0xffffff,
+      map: THREE.ImageUtils.loadTexture( "texture.svg" )
     });
     planeMesh = new THREE.Mesh(planeGeometry, planeMaterial);
     planeMesh.position.set(0, -0.55, 0);
