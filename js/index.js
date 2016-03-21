@@ -20,8 +20,8 @@ var WIDTH = window.innerWidth,
     HEIGHT = window.innerHeight;
 var mesh, color;
 var de2ra = function(degree) { return degree*(Math.PI/180);};
-var faceColorArray = [0x66FF33,0xFF66CC,0x6633FF,0x00d6ba,0xF00000,0x21871c];
-var cssColor = ["#66FF33","#FF66CC","#6633FF","#00d6ba","#F00000","#21871c"];
+var faceColorArray = [0x66FF33,0xFF66CC,0x6633FF,0x00d6ba,0xF00000,0xFFE706];
+var cssColor = ["#66FF33","#FF66CC","#6633FF","#00d6ba","#F00000","#FFE706"];
 
 $(document).ready(function(){
   init();
