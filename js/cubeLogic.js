@@ -369,8 +369,6 @@ var puzzle = {
         return (current_value || 0) + (computedScore || 1);
       });
     }
-    
-    }
   }
 }
 
