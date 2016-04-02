@@ -15,8 +15,6 @@
 <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
 <body>
 <script>
-var firebaseRef = new Firebase("https://endorfun.firebaseio.com/sessions");
-var thisGameStat = firebaseRef.push();
 var isLogedIn = false;
 var players,player;
 
@@ -46,11 +44,6 @@ var players,player;
           var score = snapshot.val();
           $('.globalScoreValue').html(score || 0);
         });
-        //Session records
-        thisGameStat.push().set({
-                facebook: data,
-                date: Date()
-              });
 	    });
 	  }
 	}

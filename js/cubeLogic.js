@@ -369,13 +369,7 @@ var puzzle = {
         return (current_value || 0) + (computedScore || 1);
       });
     }
-    //record the session
-    if(thisGameStat){
-      thisGameStat.push().set({
-                  time: diffTime,
-                  score: this.scores,
-                  moves: this.moves
-                });
+    
     }
   }
 }
