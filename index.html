@@ -40,11 +40,17 @@ var players,player;
             'name': data.first_name
         });
         //listen for score changes
+        //Google analytic id 
+        ga('set', 'userId', data.id);
         player.child('score').on('value',function(snapshot){
           var score = snapshot.val();
           $('.globalScoreValue').html(score || 0);
-          //Google analytic forvar metricValue = '123';
-          ga('set', 'metric1', score);
+          //Google analytic on score up
+          ga('send', 'event', {
+            'eventCategory': 'Score',
+            'eventAction': 'Up',
+            'eventValue': score || 0
+          });
         });
 	    });
 	  }
