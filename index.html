@@ -43,8 +43,8 @@ var players,player;
         player.child('score').on('value',function(snapshot){
           var score = snapshot.val();
           $('.globalScoreValue').html(score || 0);
-          //Google analytic for
-          ga('set', 'dimension1', score);
+          //Google analytic forvar metricValue = '123';
+          ga('set', 'metric1', score);
         });
 	    });
 	  }
